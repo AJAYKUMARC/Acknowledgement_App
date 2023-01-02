@@ -1,7 +1,18 @@
+using Acknowledgement_App.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add services to the container.
+string dbConn = builder.Configuration.GetSection("AppSettings").GetSection("ConnectionString").Value;
+builder.Configuration.GetSection("AppSettings");
+builder.Services.AddDbContext<DbAckContext>(
+        options => options.UseSqlServer(dbConn));
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -22,6 +33,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=AckForm}/{id?}");
 
 app.Run();

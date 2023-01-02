@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+
+<form asp-action="AckSubmit" asp-controller="Home" method="post">
+    <div class="row">
+        <div class="col">
+            <input type="text" name="ApplicationFor" required class="form-control" placeholder="Application for">
+        </div>
+        <div class="col">
+            <input type="text" name="HallticketNo" required class="form-control" placeholder="HT. No. ">
+        </div>
+    </div>
+    <div class="row" style="margin-top:1%">
+        <div class="col">
+            <label class="sr-only" for="inlineFormInputName2">Applied on</label>
+            <input type="date" name="AppliedOn" required class="form-control" placeholder="Applied on">
+        </div>
+        <div class="col">
+            <label class="sr-only" for="inlineFormInputName2">Date of Issue</label>
+            <input type="date" name="DateOfIssue" class="form-control" placeholder="Date of Issue">
+        </div>
+    </div>
+    <div class="row" style="margin-top:1%">
+        <div class="col">
+            <input type="number" name="NoOfCertificates" required class="form-control" placeholder="No. of Certificates">
+        </div>
+        <div class="col">
+            <input type="text" name="ChallanNo" required class="form-control" placeholder="Challan No">
+        </div>
+    </div>
+    <div class="row" style="margin-top:1%">
+        <div class="col-sm">
+            <input type="text" name="Amount" required class="form-control" placeholder="Amount Rs">
+        </div>
+    </div>
+    <div class="row" style="margin-top:1%">
+        <div class="col">
+            <textarea name="Remark" class="form-control" placeholder="Remarks"></textarea>
+        </div>
+    </div>
+    <div class="row" style="margin-top:1%">
+        <div class="col">
+            <button type="submit" class="btn btn-primary mb-3">Save & Print</button>
+        </div>
+    </div>
+</form>
